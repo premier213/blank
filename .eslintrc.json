@@ -59,12 +59,6 @@
     "react/react-in-jsx-scope": "off",
     "semi": ["error", "always"],
     "indent": "off",
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [".jsx"]
-      }
-    ],
     "react/jsx-indent-props": [2, 2],
     "react/jsx-indent": ["error", 2],
     "prettier/prettier": [
@@ -87,6 +81,7 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "import/prefer-default-export": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx",".tsx",".ts"] }],
     "react/prop-types": "off"
   },
   "overrides": [
@@ -96,5 +91,12 @@
         "@typescript-eslint/explicit-module-boundary-types": ["error"]
       }
     }
-  ]
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
 }
