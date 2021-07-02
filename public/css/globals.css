@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  /* @font-face {
+    font-family: 'javan';
+    src: url('./fonts/javan/Javanweb.woff2') format('woff2'),
+      url('./fonts/javan/Javanweb.woff') format('woff');
+  }
+  @font-face {
+    font-family: 'peyda';
+    src: url('./fonts/peyda/woff2/PeydaWebRegular.woff2') format('woff2'),
+      url('./fonts/peyda/woff/PeydaWebRegular.woff') format('woff');
+  } */
+
+}
+@layer components {
+  .btn-primary {
+    @apply text-center bg-red-500;
+  }
+  .btn-black {
+    @apply bg-gray-800 text-gray-100 flex px-4 py-1 rounded-full mx-1 transition transform hover:scale-110 duration-200
+  }
+  .btn-white {
+    @apply bg-gray-100 flex px-4 py-1 rounded-full mx-1 transition transform hover:scale-110 duration-200 
+  }
+  .anime {
+    @apply transition transform hover:scale-110 duration-200
+  }
+}
+.javanFont {
+  font-family: 'javan';
+  font-display: block;
+  font-weight: 400;
+}
+.peydaFont {
+  font-family: 'peyda';
+  font-display: block;
+  font-weight: 100;
+}
