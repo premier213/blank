@@ -1,20 +1,17 @@
-const withPlugins = require('next-compose-plugins')
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true'
-})
-// const sourceMaps = {
-//   productionBrowserSourceMaps: true
-// }
-const antdLess = require('next-plugin-antd-less')({
-  lessVarsFilePath: './public/css/global.less',
-  lessVarsFilePathAppendToEndOfContent: true,
-  cssLoaderOptions: {},
-  webpack(config) {
-    return config
-  },
-  future: {
-    webpack5: true
-  }
-})
+/* eslint-disable */
+const withAntdLess = require('next-plugin-antd-less');
 
-module.exports = withPlugins([[antdLess], [withBundleAnalyzer]])
+module.exports = withAntdLess({
+  lessVarsFilePath: './public/css/antd.less',
+  lessVarsFilePathAppendToEndOfContent: true,
+  cssLoaderOptions: {
+    esModule: false,
+    sourceMap: false,
+    modules: {
+      mode: 'local',
+    },
+  },
+  webpack(config) {
+    return config;
+  }
+});

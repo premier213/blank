@@ -1,4 +1,3 @@
-
 # Created by https://www.toptal.com/developers/gitignore/api/windows,dotenv,node,react,visualstudiocode,yarn,git
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,dotenv,node,react,visualstudiocode,yarn,git
 
@@ -202,6 +201,7 @@ $RECYCLE.BIN/
 !.yarn/plugins
 !.yarn/sdks
 !.yarn/versions
+yarn.lock
 
 # if you are NOT using Zero-installs, then:
 # comment the following lines

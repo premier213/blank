@@ -1,27 +1,15 @@
-import axios from 'axios';
-import { QueryClient, useQuery } from 'react-query';
-import { dehydrate } from 'react-query/hydration';
+import { Button } from 'antd';
 
-async function getData() {
-  const { data } = await axios.get('https://jsonplaceholder.ir/posts');
+import Link from 'next/link';
 
-  return data;
-}
-export async function getServerSideProps() {
-  const queryClient = new QueryClient();
-  await queryClient.prefetchQuery('users', getData);
+export default function Home() {
+  return (
+    <div>
+      <Button>4545454</Button>
 
-  return {
-    props: {
-      dehydratedState: dehydrate(queryClient)
-    }
-  };
-}
+      <Link href='/'>1</Link>
 
-export default function Home({ users }) {
-  const { data, isLoading, error } = useQuery('users', getData, users);
-
-  if (isLoading) return 'loading...';
-  if (error) return 'error';
-  return data.map((item) => <li key={item.id}>{(item.title, item.body)}</li>);
+      <div className='btn-primary'>ssss</div>
+    </div>
+  );
 }
